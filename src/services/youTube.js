@@ -1,11 +1,12 @@
 angular.module('video-player')
 .service('youTube', function($http) {
   // TODO
-  this.getVideo = function(query, callback) {
+  this.search = function(query, callback) {
     var data = {
-      query: 'dog',
+      q: query,
+      part: 'snippet',
       maxResults: 5,
-      key: YOUTUBE_API_KEY,
+      key: 'AIzaSyBugf5SoU1OXxy5gnvjg8wumN3CNPIbOPg',
       chart: 'mostPopular',
       type: 'video',
       videoEmbaddable: true
@@ -14,8 +15,8 @@ angular.module('video-player')
       {
         params: data,
         type: 'json'
-      }).done((response) => {
-        console.log(response);
+      }).then((response) => {
+        callback(response);
       });
   };
 });
