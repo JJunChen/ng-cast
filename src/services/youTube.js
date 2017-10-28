@@ -3,7 +3,7 @@ angular.module('video-player')
   // TODO
   this.getVideo = function(query, callback) {
     var data = {
-      query: query,
+      query: 'dog',
       maxResults: 5,
       key: YOUTUBE_API_KEY,
       chart: 'mostPopular',
